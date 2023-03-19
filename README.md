@@ -124,3 +124,89 @@ slice2 := make([]int, 2)
 copy(slice2, slice1)
 ```
 В данном примере будут скопированны 1, 2
+
+## Словари или Карты
+
+Для использования необходимо сначала инициализировать карту
+
+```go
+x := make(map[string]int)
+x["key"] = 10
+fmt.Println(x["key"])
+```
+Выведет 10
+
+Для удаления используется функция <i>delete</i>
+```go
+delete(x, "key")
+```
+
+Чтобы узнать он наличие элемента:
+```go
+name, ok := elements["Un"]
+fmt.Println(name, ok)
+```
+Если элемент есть в словаре, возвращается значение по ключу и <i>true</i>, если нет, то результат <i>false</i>
+
+---
+
+## Функции
+
+Аналогично с другими языками программирования
+
+```go
+func average(xs []float64) float64 {    
+    total := 0.0
+    for _, v := range xs {
+        total += v
+    }
+    return total / float64(len(xs))
+}
+```
+Общий вид функции возвращающая среднее значение в массиве
+
+Возвращение нескольких значений:
+```go
+func f() (int, int) {
+    return 5, 6
+}
+```
+
+---
+
+## Структуры
+
+```go
+type Circle struct {
+    x float64
+    y float64
+    r float64
+}
+
+//Или
+
+type Circle struct {
+x, y, r float64
+}
+```
+
+---
+
+## Методы
+
+```go
+func (c *Circle) area() float64 {
+    return math.Pi * c.r*c.r
+}
+```
+(c *Circle) - получатель метода
+
+
+
+
+
+
+
+
+
+
